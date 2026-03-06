@@ -962,6 +962,7 @@ localStorage.setItem(
   );
 }
 </script>
+
   <script>
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("sw.js");
@@ -971,54 +972,57 @@ if ("serviceWorker" in navigator) {
 document.oncontextmenu=()=>false;
 document.onselectstart=()=>false; 
 // =====================
-// LOGIN POR CPF
-// =====================
+<script>
 
 const usuariosAutorizados = [
-
 {
-nome:"Amanda Rodrigueiro",
-cpf:"123456789"
-},
-
-
-
+nome:"NOME DA PESSOA",
+cpf:"00000000000"
+}
 ]
 
 function verificarLogin(){
 
-const nome = document.getElementById("loginNome").value
-.trim()
-.toLowerCase()
+const nomeDigitado = document.getElementById("loginNome")
+.value.trim().toLowerCase()
 
-const cpf = document.getElementById("loginCpf")
-.value
-.replace(/\D/g,'')
+const cpfDigitado = document.getElementById("loginCpf")
+.value.replace(/\D/g,'')
 
-const usuario = usuariosAutorizados.find(u =>
-u.nome.toLowerCase() === nome && u.cpf === cpf
+const usuarioValido = usuariosAutorizados.find(u =>
+u.nome.toLowerCase() === nomeDigitado &&
+u.cpf === cpfDigitado
 )
 
-if(usuario){
+if(usuarioValido){
 
 document.getElementById("loginTela").style.display="none"
 document.getElementById("appSistema").style.display="block"
-
-localStorage.setItem("loginLiberado","true")
 
 }else{
 
 document.getElementById("erroLogin").innerText =
-"CPF ou nome inválido"
+"Nome ou CPF inválido"
 
 }
 
 }
 
 
+// BLOQUEIA O APP SEMPRE QUE CARREGAR
+window.onload = function(){
 
-document.getElementById("loginTela").style.display="none"
-document.getElementById("appSistema").style.display="block"
+document.getElementById("appSistema").style.display="none"
+document.getElementById("loginTela").style.display="flex"
+
+document.getElementById("loginNome").value=""
+document.getElementById("loginCpf").value=""
+
+}
+
+
+
+
 
 
 
