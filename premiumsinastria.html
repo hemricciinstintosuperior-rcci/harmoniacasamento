@@ -431,12 +431,7 @@ document.getElementById("conteudoSinastria").innerHTML = `
 
 document.getElementById("conteudoBiologico").innerHTML = dados.biologico;
 
-/* PDF AUTOMÁTICO */
-function gerarPDF(){
-    window.scrollTo(0,0);
-    setTimeout(()=>{ window.print(); }, 800);
-}
-setTimeout(gerarPDF, 1500);
+
 
 // BLOQUEIO CÓPIA
 document.oncontextmenu=()=>false;
