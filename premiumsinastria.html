@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Relatório para Harmonia Conjugal</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<style>
+body{
+  font-family:"Times New Roman", serif;
+  background:#ffffff;
+  margin:0;
+  color:#111;
+  line-height:1.8;
+}
+.capa { text-align:center; padding: 100px 20px; page-break-after: always; background: #fff; }
+.logo { max-width:650px; margin-bottom:20px; }
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:40px;
+  background:white;
+  box-shadow:0 0 30px rgba(0,0,0,0.05);
+}
+
+h1,h2{
+  text-align:center;
+}
+
+h2{
+  margin-top:60px;
+  border-bottom:1px solid #eee;
+  padding-bottom:10px;
+}
+
+.intro{
+  font-style:italic;
+  margin-bottom:30px;
+}
+
+.bloco{
+  margin-top:40px;
+}
+
+.numero{
+  font-weight:bold;
+  font-size:20px;
+  margin-top:15px;
+}
+
+/* ESPAÇO ENTRE PARÁGRAFOS */
+.secao div:not(.explicacao):not(.numero) br{
+  display:block;
+  margin-bottom:8px;
+}
+.assinatura{
+  text-align:right;
+  margin-top:80px;
+  font-size:14px;
+  color:#777;
+}
+
+.piramide{
+  text-align:center;
+  font-family:monospace;
+  margin-top:20px;
+}
+
+.vermelho{
+  color:red;
+  font-weight:bold;
+}
+
+.texto-limpo p {
+    margin-bottom: 18px;
+    line-height: 1.8;
+    text-align: justify;
+    text-indent: 25px;
+}
+body::before{
+  content:"❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️";
+  display:block;
+  text-align:center;
+  font-size:14px;
+  margin-bottom:20px;
+  opacity:0.4;
+}
+  
+.explicacao{
+  font-style: arial;
+  color:#000;
+  margin-bottom:18px;
+  line-height:1.75;
+  white-space: pre-line;
+}
+h2::after{
+  content:" 💖";
+  font-size:18px;
+  color:#c0392b;
+}
+.bloco {
+  font-size: 18px;
+  text-align: arial;
+}
+
+.bloco div {
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+.numero {
+  font-weight: bold;
+  margin-top: 18px;
+  margin-bottom: 6px;
+}
+  
+#resultado p {
+    margin-bottom: 15px;
+    text-align: justify;
+    line-height: 1.7;
+    text-indent: 20px; /* recuo estilo livro */
+}
+.texto {
+  white-space: pre-line;
+}
+@media print {
+    body {
+        font-size: 20px;
+    }
+
+    .resultado {
+        font-size: 20px;
+        line-height: 1.8;
+    }
+}  
+</style>
+</head>
+<body>
+
+<div class="container" id="relatorio">
+
+<!-- CAPA -->
+         <div class="capa">
+            <img class="logo" src="https://hemricciinstintosuperior-rcci.github.io/Harmonia_conjugal/icon-192.png"> 
+<h1>Relatório Premium de Sinastria</h1>
+<h2 id="nomeCasal"></h2>
+
+<div class="intro">
+<p> Relatório Premium de Sinastria apresenta uma análise vibracional completa, estruturada a partir da leitura cabalística dos nomes e datas de nascimento. O estudo é dividido em duas dimensões fundamentais: a análise individual de cada pessoa e a análise relacional do casal como unidade energética.</p>
+  
+<p>Na análise individual, são examinadas as vibrações centrais que moldam a identidade e o comportamento. A Motivação revela o impulso interno, aquilo que move emocionalmente e direciona desejos profundos. A Influência demonstra como essa energia se manifesta externamente nas relações e no ambiente. A Personalidade sintetiza essas forças, mostrando o padrão vibracional predominante na expressão pessoal.</p>
+
+<p>O Caminho de Vida indica a trajetória evolutiva, os aprendizados e desafios estruturais ao longo da existência. O Propósito amplia essa leitura ao revelar a integração entre identidade e destino, apontando direção e significado. </p>
+  
+<p>O Ano Pessoal, por sua vez, contextualiza o momento atual dentro de um ciclo temporal específico, demonstrando tendências, oportunidades e exigências do período vigente. A Harmonia Individual complementa essa análise ao avaliar o equilíbrio interno entre forças vibracionais, evidenciando pontos de estabilidade ou tensão.</p>
+
+<p>Na dimensão relacional, a Sinastria do casal examina o cruzamento energético entre os propósitos individuais, revelando compatibilidades, aprendizados conjuntos e potenciais desafios na convivência. Essa leitura demonstra como duas estruturas vibracionais interagem, se complementam ou se tensionam, oferecendo compreensão estratégica sobre a dinâmica afetiva e evolutiva da união.</p>
+
+<p>O relatório também contempla a Compatibilidade Biológica, analisando fatores sanguíneos que podem influenciar a saúde reprodutiva e a segurança gestacional. Embora distinta da análise vibracional, essa verificação adiciona uma camada prática e preventiva à avaliação do casal.</p>
+
+<p>Adicionalmente, é apresentado o Mapa do Bebê, que analisa o potencial vibracional do nome escolhido, identificando harmonia, regência e possíveis sequências negativas. Essa etapa reforça a importância do nome como elemento formador de identidade e campo energético futuro.</p>
+Assim, este relatório integra aspectos espirituais, comportamentais, relacionais e biológicos em uma única leitura sistêmica, oferecendo compreensão profunda sobre identidade, compatibilidade e projeção familiar.</p>
+<div>
+
+<!-- PESSOA 1 -->
+<h2 id="tituloP1"></h2>
+
+<div class="intro">
+A análise individual revela como as vibrações pessoais moldam
+personalidade, comportamento e influência no relacionamento amoroso.
+</div>
+
+<div id="conteudoP1"></div>
+
+<!-- PESSOA 2 -->
+<h2 id="tituloP2"></h2>
+
+<div class="intro">
+A análise individual revela como as vibrações pessoais moldam
+personalidade, comportamento e influência nos relacionamentos.
+</div>
+
+<div id="conteudoP2"></div>
+
+<!-- SINASTRIA -->
+<h2>Sinastria do Casal</h2>
+
+<div class="intro">
+<p>O que significa a Sinastria Amorosa do Casal na Numerologia?</p>
+  
+<p>Ela representa a forma como duas pessoas interagem dentro de um relacionamento. Cada número carrega a sua própria energia e, quando combinados, revelam tendências, desafios e potenciais da vida em conjunto.</p>
+  
+<p>Essas combinações mostram:</p>
+<p>Atrações naturais: o que aproxima o casal e cria harmonia.</p>
+  
+<p>Diferenças e aprendizados: onde podem surgir desafios na convivência e oportunidades de crescimento.</p>
+  
+<p>Expectativas emocionais: como cada um expressa sentimentos e o que espera do parceiro.</p>
+  
+<p>Caminho de equilíbrio: como o casal pode alinhar suas energias para fortalecer a união.</p>
+<div>
+
+<div id="conteudoSinastria"></div>
+
+<!-- COMPATIBILIDADE BIOLÓGICA -->
+<h2>Compatibilidade Biológica</h2>
+
+<div class="intro">
+<p>A compatibilidade entre um homem e uma mulher que desejam ter filhos não envolve apenas afinidade emocional ou afinidade de personalidade; ela também inclui aspectos biológicos fundamentais, como o tipo sanguíneo e o fator Rh. </p>
+
+<p>Conhecer essas informações é uma medida preventiva importante dentro do planejamento familiar consciente. O sistema ABO (A, B, AB e O) e o fator Rh (positivo ou negativo) podem influenciar o acompanhamento da gestação, especialmente quando a mãe possui Rh negativo e o pai Rh positivo. Nesse cenário, existe a possibilidade de o bebê herdar o Rh positivo, o que pode levar à chamada incompatibilidade Rh.</p>
+
+<p>Sem acompanhamento médico, essa incompatibilidade pode gerar produção de anticorpos maternos contra o sangue do bebê, provocando anemia fetal, icterícia grave e, em situações mais severas, complicações gestacionais. Felizmente, a medicina moderna dispõe de prevenção eficaz por meio da imunoglobulina anti-D, aplicada durante a gravidez e após o parto, reduzindo drasticamente os riscos.</p>
+
+<p>A incompatibilidade ABO, embora geralmente mais leve, também pode ocasionar icterícia neonatal, sendo igualmente monitorada no pré-natal. Além disso, exames complementares permitem identificar possíveis doenças genéticas hereditárias quando ambos os pais são portadores do mesmo gene recessivo.</p>
+
+<p>Portanto, conhecer o tipo sanguíneo e realizar exames pré-concepcionais não significa limitar relações, mas ampliar a responsabilidade e a consciência do casal.</p>
+  
+<p>Informar-se é um ato de cuidado. Quando existe o desejo de gerar uma nova vida, compreender esses fatores biológicos é parte essencial de uma compatibilidade plena — não apenas afetiva, mas também física e preventiva.</p>
+</div>
+
+<div id="conteudoBiologico"></div>
+
+<!-- MAPA DO BEBÊ -->
+<h2>Mapa do Bebê</h2>
+
+<div class="intro">
+<p>Energia do Nome do Bebê – A Base Vibracional da Identidade
+O nome de um bebê não é apenas uma escolha bonita ou uma homenagem familiar. Ele é o primeiro presente que os pais oferecem ao filho. É a palavra que será repetida milhares de vezes ao longo da vida, que será chamada na infância, pronunciada na adolescência, assinada na fase adulta e lembrada na maturidade. Cada repetição reforça uma frequência. Cada som carrega uma vibração.</p>
+
+<p>Quando analisamos a Energia do Nome do Bebê, não estamos falando de um mapa completo de destino — pois ainda não há data de nascimento —, mas sim da estrutura vibracional inicial que moldará sua base emocional e comportamental. Através do nome, é possível compreender três pilares fundamentais: a Motivação (o impulso interno da alma), a Influência (a forma como essa energia se manifesta) e a Personalidade (a síntese vibracional que será percebida no mundo).</p>
+
+<p>Essa base importa. E importa muito.</p>
+
+<p>Um nome harmonioso favorece equilíbrio emocional, segurança interna e coerência entre sentir e agir. Ele sustenta a construção de uma identidade mais estável e fluida. Já um nome com sequências negativas pode indicar padrões repetitivos que tendem a se manifestar como desafios constantes, conflitos internos ou tensões desnecessárias ao longo da vida.</p>
+
+<p>Isso não significa que o destino esteja condenado. Significa que os pais têm a oportunidade de escolher conscientemente.</p>
+<p>A escolha do nome pode evitar que a criança carregue uma frequência vibracional marcada por repetições desarmônicas. Pode reduzir tendências a bloqueios emocionais, instabilidades ou ciclos de conflito. Pode, sobretudo, oferecer uma base mais leve, coerente e alinhada para o desenvolvimento futuro.</p>
+
+<p>Escolher um nome harmonicamente equilibrado é um ato de cuidado profundo. É pensar no futuro emocional do filho antes mesmo de ele dar os primeiros passos.</p>
+
+<p>Além disso, assim como é essencial que os pais realizem um check-up biológico antes da gestação — verificando compatibilidade sanguínea, fator Rh e condições de saúde — também é prudente considerar a compatibilidade energética que o nome trará. A biologia protege o corpo. A vibração organiza a identidade.</p>
+
+<p>Quando biologia e energia caminham juntas, os pais não estão apenas gerando uma vida — estão preparando um alicerce.</p>
+
+<p>A Energia do Nome do Bebê representa essa base inicial. É a primeira estrutura vibracional que sustentará sua construção pessoal. É o campo sutil que acompanhará cada fase do crescimento.</p>
+
+</p>Por isso, escolher com consciência não é exagero — é responsabilidade afetiva.</p>
+
+</p>O nome é som.</p>
+
+</p>O som é frequência.</p>
+
+</p>E frequência constrói realidade.</p>
+
+</p>Dar um nome harmônico é oferecer ao filho não apenas identidade, mas equilíbrio desde o princípio.</p>
+
+</div>
+
+<div id="conteudoBebe">     
+</div>
+
+<!-- CONSIDERAÇÕES FINAIS -->
+<h2>Considerações Finais</h2>
+
+<div>
+</p>A sinastria não é uma sentença, nem uma previsão imutável. Ela é um instrumento de consciência. Ao longo deste estudo, foram apresentados padrões vibracionais, compatibilidades, pontos de tensão e potenciais de crescimento. Porém, acima de qualquer número ou regência, permanece o fator mais determinante: o nível de maturidade emocional e a disposição para evoluir.</p>
+  
+</p>Compatibilidade não substitui diálogo. Harmonia vibracional não dispensa responsabilidade. E desafios identificados não representam obstáculos definitivos, mas oportunidades de ajuste consciente. O verdadeiro propósito desta análise é ampliar a percepção, oferecendo clareza onde antes havia apenas intuição.</p>
+  
+</p>Relacionamentos prosperam quando existe autoconhecimento. Quando cada indivíduo compreende sua própria motivação, sua forma de agir, seus ciclos e seus aprendizados, a convivência se torna mais lúcida e menos reativa. A sinastria, portanto, funciona como um mapa estratégico de convivência — não para controlar o outro, mas para compreender melhor a dinâmica construída entre duas pessoas.</p>
+  
+</p>Da mesma forma, refletir sobre compatibilidade biológica e sobre a energia do nome do bebê demonstra responsabilidade e visão de futuro. Isso revela uma postura consciente diante da construção de uma família. Pensar antes de agir é maturidade. Buscar conhecimento antes de decidir é sabedoria.</p>
+  
+</p>A decisão de realizar esta análise já demonstra algo fundamental: intenção de fazer melhor. Intenção de compreender, ajustar e construir com base sólida. E isso, por si só, já diferencia a jornada.</p>
+  
+</p>Que este estudo sirva como orientação estratégica, mas que as escolhas diárias sejam guiadas por diálogo, respeito e crescimento mútuo. Números revelam tendências. Consciência transforma destinos.</p>
+  
+</p>Agradecemos pela confiança depositada neste trabalho e pela atitude de buscar compreensão antes de dar os próximos passos. Que as informações aqui apresentadas sejam utilizadas com equilíbrio, discernimento e responsabilidade — sempre lembrando que o maior poder de transformação está nas decisões conscientes que cada pessoa escolhe assumir.</p>
+<div><div>
+
+<div class="assinatura">
+<h4>Relatório desenvolvido por Instinto Superior</h4>
+</div>
+
+</div>
+
+<script>
+const dados = JSON.parse(localStorage.getItem("relatorioSinastria"));
+
+// ============================================
+// FUNÇÃO PARA PEGAR PRIMEIRO NOME E FORMATAR
+// ============================================
+function formatarPrimeiroNome(nomeCompleto) {
+    if (!nomeCompleto) return "Você";
+    let primeiroNome = nomeCompleto.trim().split(' ')[0];
+    return primeiroNome.charAt(0).toUpperCase() + primeiroNome.slice(1).toLowerCase();
+}
+
+function aplicarNomes(texto, nomeProprio) {
+    if (!texto) return "";
+
+    const nome1 = dados.pessoa1?.nome || "";
+    const nome2 = dados.pessoa2?.nome || "";
+    const energia1 = dados.pessoa1?.proposito;
+    const energia2 = dados.pessoa2?.proposito;
+
+    let novoTexto = texto;
+
+    // 1. Tratamento para Sinastria (Trocar Energias pelos nomes do casal)
+    if (energia1 && energia2) {
+        const menor = Math.min(energia1, energia2);
+        const maior = Math.max(energia1, energia2);
+        const nomeMenor = (energia1 === menor) ? nome1 : nome2;
+        const nomeMaior = (energia1 === maior) ? nome1 : nome2;
+
+        novoTexto = novoTexto.replace(new RegExp(`Energia ${menor}`, 'gi'), nomeMenor);
+        novoTexto = novoTexto.replace(new RegExp(`Energia ${maior}`, 'gi'), nomeMaior);
+        novoTexto = novoTexto.replace(new RegExp(`número ${menor}`, 'gi'), nomeMenor);
+        novoTexto = novoTexto.replace(new RegExp(`número ${maior}`, 'gi'), nomeMaior);
+    }
+
+    // 2. Tratamento para "você" (Trocar pelo primeiro nome em negrito)
+    if (nomeProprio) {
+        const pNome = formatarPrimeiroNome(nomeProprio);
+        novoTexto = novoTexto.replace(/você/gi, `<strong>${pNome}</strong>`);
+    }
+
+    return novoTexto;
+}
+
+if(!dados){
+  document.body.innerHTML = "<h2 style='text-align:center;margin-top:120px'>Gere o relatório pelo index primeiro.</h2>";
+  throw new Error("Sem dados");
+}
+
+/* NOME DO CASAL NA CAPA */
+document.getElementById("nomeCasal").innerText = dados.pessoa1.nome + " & " + dados.pessoa2.nome;
+
+/* TITULOS INDIVIDUAIS */
+document.getElementById("tituloP1").innerText = "Análise Individual – " + dados.pessoa1.nome;
+document.getElementById("tituloP2").innerText = "Análise Individual – " + dados.pessoa2.nome;
+
+/* MONTAGEM DOS BLOCOS INDIVIDUAIS */
+function montarPessoa(p){
+  const nomeAtu = p.nome;
+  return `
+  <div class="bloco">
+    <div class="numero">Motivação: ${p.motivacao}</div>
+    <div>${aplicarNomes(p.textos.motivacao, nomeAtu)}</div>
+
+    <div class="numero">Influência: ${p.influencia}</div>
+    <div>${aplicarNomes(p.textos.influencia, nomeAtu)}</div>
+
+    <div class="numero">Personalidade: ${p.personalidade}</div>
+    <div>${aplicarNomes(p.textos.personalidade, nomeAtu)}</div>
+
+    <div class="numero">Caminho de Vida: ${p.caminho}</div>
+    <div>${aplicarNomes(p.textos.caminho, nomeAtu)}</div>
+
+    <div class="numero">Propósito: ${p.proposito}</div>
+    <div>${aplicarNomes(p.textos.proposito, nomeAtu)}</div>
+
+    <div class="numero">Ano Pessoal: ${p.ano}</div>
+    <div>${aplicarNomes(p.textos.ano, nomeAtu)}</div>
+
+    <div class="numero">Harmonia Individual: ${p.harmonia}</div>
+    <div>${aplicarNomes(p.textos.harmonia, nomeAtu)}</div>
+
+    ${(p.textos.seqNegativa && p.textos.seqNegativa.trim() !== "") ? `
+       <div class="numero">Sequência Negativa: Identificada — Ponto de Ajuste Evolutivo</div>
+       <div>${aplicarNomes(p.textos.seqNegativa, nomeAtu)}</div>
+    ` : `
+       <div class="numero">Sequência Positiva: Estrutura Vibracional Harmônica</div>
+    `}
+
+    <div class="piramide">${p.piramide}</div>
+    <div class="numero">Regente: ${p.regente}</div>
+    <div>${aplicarNomes(p.textos.regente, nomeAtu)}</div>
+  </div>
+  `;
+}
+
+document.getElementById("conteudoP1").innerHTML = montarPessoa(dados.pessoa1);
+document.getElementById("conteudoP2").innerHTML = montarPessoa(dados.pessoa2);
+
+/* MAPA DO BEBÊ */
+function montarBebe(b){
+  if(!b) return "";
+  const nB = b.nome || "O Bebê";
+  return `
+    <div class="bloco">
+      <div class="numero">Motivação: ${b.motivacao ?? ""}</div>
+      <div>${aplicarNomes(b.textos?.motivacao, nB)}</div>
+      <div class="numero">Influência: ${b.influencia ?? ""}</div>
+      <div>${aplicarNomes(b.textos?.influencia, nB)}</div>
+      <div class="numero">Personalidade: ${b.personalidade ?? ""}</div>
+      <div>${aplicarNomes(b.textos?.personalidade, nB)}</div>
+
+      ${(b.textos?.seqNegativa && b.textos.seqNegativa.trim() !== "") ? `
+         <div class="numero">Sequência Negativa: Identificada para o nome ${nB}</div>
+         <div>${aplicarNomes(b.textos.seqNegativa, nB)}</div>
+      ` : `
+         <div class="numero">Sequência Positiva: Estrutura Vibracional Harmônica para o bebê</div>
+      `}
+      <div class="piramide">${b.piramide}</div>
+      <div class="numero">Regente: ${b.regente}</div>
+      <div>${aplicarNomes(b.textos.regente, nB)}</div>
+    </div>
+  `;
+}
+document.getElementById("conteudoBebe").innerHTML = montarBebe(dados.bebe);
+
+/* SINASTRIA */
+let textoSemTituloRepetido = dados.sinastria.texto.replace(/<h[23]>.*?<\/h[23]>/gi, '');
+const textoTratado = aplicarNomes(textoSemTituloRepetido).replace(/\\n/g, "\n");
+
+const textoComParagrafos = textoTratado
+  .split("\n")
+  .filter(p => p.trim() !== "")
+  .map(p => `<p>${p.trim()}</p>`)
+  .join("");
+
+document.getElementById("conteudoSinastria").innerHTML = `
+    <h3 style="text-align:center; margin-bottom:20px; font-size:22px;">
+        Harmonia Conjugal – Relacionamento de ${dados.pessoa1.nome} com ${dados.pessoa2.nome}
+    </h3>
+    <div class="numero">Índice de Harmonia: ${dados.sinastria.numero}</div>
+    <div class="texto-limpo">${textoComParagrafos}</div>
+`;
+
+document.getElementById("conteudoBiologico").innerHTML = dados.biologico;
+
+/* PDF AUTOMÁTICO */
+function gerarPDF(){
+    window.scrollTo(0,0);
+    setTimeout(()=>{ window.print(); }, 800);
+}
+setTimeout(gerarPDF, 1500);
+
+// BLOQUEIO CÓPIA
+document.oncontextmenu=()=>false;
+document.onselectstart=()=>false; 
+</script>
+
+</body>
+</html>
