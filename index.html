@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Sinastria para Relacionamento Conjugal</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#111827">
+<style>
+body{
+  font-family: Arial;
+  background:#111936;
+  color:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+}
+
+.bloco{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:40px;
+}
+
+.card{
+  background:#111936;
+  padding:20px;
+  border-radius:10px;
+  width:50%;
+}
+
+input {
+  width: 600px;
+  font-size: 18px;
+  padding: 14px;
+  background-color: #fff; /* Cor cinza idêntica ao padrão do sistema */
+  border: 1px solid #ccc;    /* Borda suave para dar profundidade */
+  color: #000;               /* Cor do texto ao digitar */
+  display: block;            /* Garante que fiquem um abaixo do outro */
+  margin: 10px auto;         /* Centraliza e dá espaçamento */
+}
+
+button{
+  padding:8px 12px;
+  margin:5px 5px 5px 0;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  background:#6B0202;
+  color:#FFFFFF;
+}
+
+button:hover{
+  background:#002091;
+}
+
+.abas{
+  margin-top:10px;
+}
+
+.piramide{
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+}
+
+.negativo{
+  color:#ff3b5c;
+  font-weight:bold;
+}
+
+.regente{
+  margin-top:10px;
+  color:#00e0ff;
+  font-weight:bold;
+}
+
+.resultadoFinal{
+  margin-top:30px;
+  padding:10px;
+  background:#111936;
+  border-radius:10px;
+}
+
+/* MODAL */
+
+.modal{
+  display:none;
+  position:fixed;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+}
+
+.modal-content{
+  background:#111936;
+  margin:5% auto;
+  padding:20px;
+  width:70%;
+  border-radius:10px;
+  position:relative;
+}
+
+.close{
+  position:absolute;
+  right:15px;
+  top:10px;
+  cursor:pointer;
+  font-size:20px;
+}
+
+.botoes-piramide{
+  margin-top:10px;
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.botoes-piramide button{
+  background:#6B0202;
+  border:1px solid #2e3c78;
+}
+
+.botoes-piramide button:hover{
+  background:#24327a;
+}
+
+#resultadoBebe{
+  margin-top:10px;
+  font-size:16px;
+}
+  /* ESPAÇO ENTRE PARÁGRAFOS */
+.secao div:not(.explicacao):not(.numero) br{
+  display:block;
+  margin-bottom:12px;
+}
+
+/* Isso vai esconder o segundo título caso ele venha dentro do bloco de texto */
+#modalTexto h3:nth-of-type(2), 
+#modalTexto h2:nth-of-type(2) {
+    display: none !important;
+}  
+/* Isso força os campos a aparecerem e ficarem empilhados no celular */
+@media (max-width: 768px) {
+    .container-inputs { /* Use a classe que envolve seus inputs */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input, select {
+        display: block !important; /* Força a exibição */
+        width: 90% !important;     /* Ajusta a largura para o celular */
+            margin: 0 auto 25px auto !important;
+        background-color: #e5e7eb !important; /* Força o cinza no celular */
+        font-size: 16px;
+    }
+  
+  }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+                                         <h1>❤️ ❤️ ❤️          Harmonia para Relacionamento Conjugal         ❤️  ❤️  ❤️</h1>
+
+<div class="bloco">
+
+<!-- PESSOA 1 -->
+<div class="card">
+<h3>Pessoa 1</h3>
+ Nome completo (igual certidão)
+<input type="text" id="nome1" placeholder="">
+ data de nascimento
+<input type="date" id="data1">
+ <select id="sexo1">
+<option value="">Sexo</option>
+ <option value="M">Masculino</option>
+<option value="F">Feminino</option>
+</select>
+                    
+ <select id="tipo1">
+<option value="">Tipo Sanguíneo</option>
+<option>A</option>
+ <option>B</option>
+<option>AB</option>
+<option>O</option>
+   </select>
+
+<select id="rh1">
+<option value="">Fator RH</option>
+<option value="+">+</option>
+<option value="-">-</option>
+</select>
+
+<div class="abas">
+<button onclick="abrirModal('m1')">Motivação</button>
+<button onclick="abrirModal('i1')">Influencia</button>
+<button onclick="abrirModal('p1')">Personalidade</button>
+<button onclick="abrirModal('d1')">Caminho</button>
+<button onclick="abrirModal('pr1')">Propósito</button>
+<button onclick="abrirModal('h1')">Harmonia</button>
+ <button onclick="abrirModal('a1')">Ano Pessoal</button> 
+</div>
+
+</div>
+
+<!-- PIRÂMIDE 1 -->
+<div class="card">
+<h3>Pirâmide</h3>
+<div id="piramide1" class="piramide"></div>
+<div id="regente1" class="regente"></div>
+</div>
+
+</div>
+
+<div class="bloco">
+
+<!-- PESSOA 2 -->
+<div class="card">
+<h3>Pessoa 2</h3>
+Nome completo (igual certidão)
+<input type="text" id="nome2">
+data de nascimento  
+<input type="date" id="data2">  
+<select id="sexo2">
+<option value="">Sexo</option>
+<option value="M">Masculino</option>
+<option value="F">Feminino</option>
+</select>
+
+
+<select id="tipo2">
+<option value="">Tipo Sanguíneo</option>
+<option>A</option>
+<option>B</option>
+<option>AB</option>
+<option>O</option>
+</select>
+
+<select id="rh2">
+<option value="">Fator RH</option>
+<option value="+">+</option>
+<option value="-">-</option>
+</select>
+
+<div class="abas">
+<button onclick="abrirModal('m2')">Motivação</button>
+<button onclick="abrirModal('i2')">Influencia</button>
+<button onclick="abrirModal('p2')">Personalidade</button>
+<button onclick="abrirModal('d2')">Caminho</button>
+<button onclick="abrirModal('pr2')">Propósito</button>
+<button onclick="abrirModal('h2')">Harmonia</button>
+<button onclick="abrirModal('a2')">Ano Pessoal</button>  
+</div>
+
+</div>
+
+<!-- PIRÂMIDE 2 -->
+<div class="card">
+<h3>Pirâmide</h3>
+<div id="piramide2" class="piramide"></div>
+<div id="regente2" class="regente"></div>
+</div>
+
+</div>
+
+<button onclick="gerar()">click aqui para ver o calculo</button>
+<button onclick="mostrarSinastria()">❤️ Ver a Compatibilidade do casal</button>
+<button onclick="abrirPremiumSinastria()">  Liberar o relatório e Baixar pdf premium
+
+</button>  
+
+<div class="resultadoFinal" id="compat"></div>
+
+<!-- MAPA DO BEBÊ -->
+<div class="bloco">
+
+  <!-- BLOCO ESQUERDO BEBÊ -->
+  <div class="card">
+    <h3>Mapa do Bebê</h3>
+
+    <input type="text" id="nomeBebe" placeholder="Nome do bebê">
+
+    <button onclick="gerarBebe()">Gerar Mapa do Bebê</button>
+
+ <div class="abas">
+  <button onclick="abrirModal('mB')">Motivação</button>
+  <button onclick="abrirModal('iB')">Influencia</button>
+  <button onclick="abrirModal('pB')">Personalidade</button>
+</div>
+
+<div id="resultadoBebe"></div>
+
+  </div>
+
+  <!-- PIRÂMIDE BEBÊ -->
+  <div class="card">
+    <h3>Pirâmide</h3>
+    <div id="piramideBebe" class="piramide"></div>
+    <div id="regenteBebe" class="regente"></div>
+  </div>
+
+</div>
+
+</div>
+
+
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+<div class="modal-content">
+<span class="close" onclick="fecharModal()">X</span>
+<div id="modalTexto"></div>
+</div>
+</div>
+
+<script src="textos.js"></script>
+
+<script>
+
+// =====================
+// TABELA CABALÍSTICA
+// =====================
+const tabela = {
+  A:1, J:1, I:1, Q:1, Y:1,
+  B:2, K:2, R:2,
+  C:3, G:3, L:3, S:3,
+  D:4, M:4, T:4,
+  E:5, H:5, N:5,
+  U:6, V:6, W:6, X:6, Ç:6,
+  O:7, Z:7,
+  F:8, P:8
+};
+
+const vogais = ["A","E","I","O","U"];
+
+// =====================
+// ACENTOS
+// =====================
+function calcularValorComAcentos(letra){
+  const base = letra.normalize("NFD")[0];
+  const valorBase = tabela[base];
+  if(!valorBase) return 0;
+
+  let soma = 0;
+  let mult = 1;
+
+  for(let c of letra.normalize("NFD")){
+    if(c === "\u0301") soma += 2;
+    else if(c === "\u0302") soma += 7;
+    else if(c === "\u0303") soma += 3;
+    else if(c === "\u0327") soma += 6;
+    else if(c === "\u0300") mult *= 2;
+    else if(c === "\u0308") mult *= 2;
+  }
+
+  return (valorBase + soma) * mult;
+}
+
+function reduzir(n){
+  n = Math.abs(n);
+  while(n > 9){
+    n = n.toString().split("").reduce((a,b)=>a+Number(b),0);
+  }
+  return n;
+}
+
+function calcularAnoPessoal(data){
+
+  if(!data) return 0;
+
+  const [ano, mes, dia] = data.split("-").map(Number);
+
+  const anoAtual = new Date().getFullYear();
+
+  const soma =
+    reduzir(dia) +
+    reduzir(mes) +
+    reduzir(anoAtual);
+
+  return reduzir(soma);
+}  
+
+// =====================
+// CALCULO COMPLETO
+// =====================
+function calcularPessoa(nome, data){
+
+  nome = nome.toUpperCase();
+
+  let somaV=0, somaC=0;
+  let valores=[];
+
+  for(let l of nome){
+    const valor = calcularValorComAcentos(l);
+    if(!valor) continue;
+
+    valores.push(reduzir(valor));
+
+    const base = l.normalize("NFD")[0];
+    if(vogais.includes(base)) somaV += valor;
+    else somaC += valor;
+  }
+
+  const motivacao = reduzir(somaV);
+  const influencia = reduzir(somaC);
+  const personalidade = reduzir(somaV+somaC);
+
+  let caminho=0, proposito=0;
+
+  if(data){
+    const [ano,mes,dia] = data.split("-").map(Number);
+    caminho = reduzir(dia+mes+ano);
+    proposito = reduzir(caminho+personalidade);
+  }
+
+const harmonia = proposito;
+
+return {
+  motivacao,
+  influencia,
+  personalidade,
+  caminho,
+  proposito,
+  harmonia,
+  valores
+}
+}
+
+// =====================
+// PIRÂMIDE INVERTIDA
+// =====================
+// =====================
+// PIRÂMIDE INVERTIDA
+// =====================
+function gerarPiramide(valores, elementoPiramide, elementoRegente){
+
+let sequenciaDetectada = null;
+let numerosSequencias = [];
+
+  if(!valores || valores.length === 0){
+    elementoPiramide.innerHTML="";
+    elementoRegente.innerHTML="";
+    return;
+  }
+
+  let linhas = [valores.map(Number)];
+
+  // Gera todas as linhas
+  while(linhas[linhas.length-1].length > 1){
+
+    let anterior = linhas[linhas.length-1];
+    let nova = [];
+
+    for(let i=0;i<anterior.length-1;i++){
+      nova.push(Number(reduzir(anterior[i] + anterior[i+1])));
+    }
+
+    linhas.push(nova);
+  }
+
+  // ============================
+  // DETECTAR TODAS AS SEQUÊNCIAS
+  // ============================
+
+  let marcacoes = [];
+
+  for(let l=0; l<linhas.length; l++){
+
+    marcacoes[l] = new Set();
+    let linha = linhas[l];
+
+    let i=0;
+
+    while(i < linha.length){
+
+      let atual = Number(linha[i]);
+      let count = 1;
+      let j = i+1;
+
+      while(j < linha.length && Number(linha[j]) === atual){
+        count++;
+        j++;
+      }
+
+      if(count >= 3){
+        for(let k=i; k<i+count; k++){
+          marcacoes[l].add(k);
+        }
+      }
+
+      i += count;
+    }
+  }
+
+  // ============================
+  // RENDERIZAR PIRÂMIDE
+  // ============================
+
+  let html="";
+
+  for(let l=0; l<linhas.length; l++){
+
+    html += linhas[l].map((n,idx)=>{
+
+if (marcacoes[l].has(idx)){
+
+  if (!numerosSequencias.includes(n)) {
+    numerosSequencias.push(n);
+  }
+
+  return `<span class="negativo">${n}</span>`;
+}
+
+      return n;
+
+    }).join(" ") + "<br>";
+  }
+
+  elementoPiramide.innerHTML = html;
+
+  // ============================
+  // REGENTE
+  // ============================
+
+ const regente = linhas[linhas.length - 1][0];
+
+// Localize o final da função gerarPiramide e substitua por este trecho:
+  elementoRegente.innerHTML = `
+    <div class="botoes-piramide">
+      <button onclick="abrirModalRegente(textos.regente[${regente}], '${elementoRegente.id}')">
+        Regente: ${regente}
+      </button>
+  
+      <button onclick="mostrarSequenciaNegativa('${elementoRegente.id}')">
+        Sequência Negativa
+      </button>
+    </div>
+  `;
+
+  if (elementoRegente.id === "regente1") dados1.regente = regente;
+  if (elementoRegente.id === "regente2") dados2.regente = regente;
+  if (elementoRegente.id === "regenteBebe") dadosBebe.regente = regente;
+  
+  if (elementoRegente.id === "regente1") dados1.sequenciaNegativa = numerosSequencias;
+  if (elementoRegente.id === "regente2") dados2.sequenciaNegativa = numerosSequencias;
+  if (elementoRegente.id === "regenteBebe") dadosBebe.sequenciaNegativa = numerosSequencias;
+
+  if (elementoRegente.id === "regenteBebe") {
+    const resultado = document.getElementById("resultadoBebe");
+    if (!numerosSequencias || numerosSequencias.length === 0) {
+      resultado.innerHTML = "✅ Este nome é harmônico.";
+    } else {
+      resultado.innerHTML = "❌ Este nome possui sequência negativa e não é harmônico.";
+    }
+  }
+} // <--- Fim da função gerarPiramide
+
+
+
+// =====================
+// COMPATIBILIDADE RH
+// =====================
+function compatibilidadeRH(){
+
+  const sexo1 = sexo1Val;
+  const sexo2 = sexo2Val;
+  const rh1 = rh1Val;
+  const rh2 = rh2Val;
+
+  let mulherRH, homemRH;
+
+  if(sexo1==="F"){
+    mulherRH = rh1;
+    homemRH = rh2;
+  }else if(sexo2==="F"){
+    mulherRH = rh2;
+    homemRH = rh1;
+  }else{
+    return "Compatibilidade biológica: Sexo feminino não informado.";
+  }
+
+  if(mulherRH==="-" && homemRH==="+"){
+    return "Compatibilidade biológica: ⚠ Mulher RH negativo e homem RH positivo. Exige acompanhamento médico.";
+  }
+
+  return "Compatibilidade biológica: Sem risco aparente.";
+}
+
+// =====================
+// SINASTRIA
+// =====================
+
+
+function chaveSinastria(a,b){
+  const menor = Math.min(a,b);
+  const maior = Math.max(a,b);
+  return `${menor}-${maior}`;
+}
+
+function mostrarSinastria(){
+
+  if(!dados1 || !dados2) return;
+
+  const nome1 = document.getElementById("nome1").value;
+  const nome2 = document.getElementById("nome2").value;
+
+  const energia1 = dados1.proposito;
+  const energia2 = dados2.proposito;
+
+  const chave = chaveSinastria(energia1, energia2);
+
+  let texto = textos.sinastria[chave] ||
+    `A combinação entre o relacionamento de ${energia1} e  Energia ${energia2}.`;
+
+  // -----------------------------
+  // SUBSTITUIÇÕES INTELIGENTES
+  // -----------------------------
+
+  const menor = Math.min(energia1, energia2);
+  const maior = Math.max(energia1, energia2);
+
+  const nomeMenor = (energia1 === menor) ? nome1 : nome2;
+  const nomeMaior = (energia1 === maior) ? nome1 : nome2;
+
+  // Energia X
+  texto = texto.replaceAll(`Energia ${menor}`, nomeMenor);
+  texto = texto.replaceAll(`Energia ${maior}`, nomeMaior);
+
+  // número X
+  texto = texto.replaceAll(`número ${menor}`, nomeMenor);
+  texto = texto.replaceAll(`número ${maior}`, nomeMaior);
+
+  texto = texto.replaceAll(`Número ${menor}`, nomeMenor);
+  texto = texto.replaceAll(`Número ${maior}`, nomeMaior);
+
+  const textoFinal = `
+    <h3>Harmonia Conjugal – ${nome1} com ${nome2}</h3>
+    ${texto}
+  `;
+
+  abrirModalTexto(textoFinal);
+}
+
+// =====================
+// MODAL
+// =====================
+function abrirModalTexto(texto){
+  document.getElementById("modalTexto").innerHTML = texto;
+  document.getElementById("modal").style.display="block";
+}
+// =====================
+// FUNÇÕES DE FORMATAÇÃO E MODAL (ATUALIZADAS)
+// =====================
+
+// ============================================
+// NOVAS FUNÇÕES DE FORMATAÇÃO E MODAL
+// ============================================
+
+function formatarTextoPersonalizado(texto, nomeCompleto) {
+  if (!texto) return "";
+  
+  // Extrai apenas o primeiro nome, remove espaços e corrige maiúsculas/minúsculas
+  let primeiroNome = nomeCompleto.trim().split(' ')[0];
+  if (primeiroNome) {
+      primeiroNome = primeiroNome.charAt(0).toUpperCase() + primeiroNome.slice(1).toLowerCase();
+  } else {
+      primeiroNome = "Você";
+  }
+
+  // Substitui "você" ou "Você" pelo nome em negrito
+  let t = texto;
+  t = t.replace(/você/gi, `<strong>${primeiroNome}</strong>`);
+  return t;
+}
+
+function abrirModal(tipo) {
+  let textoBase = "";
+  let nomePessoa = "";
+
+  if (tipo.includes("1")) {
+    nomePessoa = document.getElementById("nome1").value;
+    if(tipo==="m1") textoBase = textos.motivacao[dados1.motivacao];
+    if(tipo==="i1") textoBase = textos.influencia[dados1.influencia];
+    if(tipo==="p1") textoBase = textos.personalidade[dados1.personalidade];
+    if(tipo==="d1") textoBase = textos.CaminhodeVida[dados1.caminho];
+    if(tipo==="pr1") textoBase = textos.proposito[dados1.proposito];
+    if(tipo==="h1") textoBase = textos.harmonia[dados1.proposito];
+    if(tipo==="a1") textoBase = textos.anoPessoal[dados1.anoPessoal];
+  } 
+  else if (tipo.includes("2")) {
+    nomePessoa = document.getElementById("nome2").value;
+    if(tipo==="m2") textoBase = textos.motivacao[dados2.motivacao];
+    if(tipo==="i2") textoBase = textos.influencia[dados2.influencia];
+    if(tipo==="p2") textoBase = textos.personalidade[dados2.personalidade];
+    if(tipo==="d2") textoBase = textos.CaminhodeVida[dados2.caminho];
+    if(tipo==="pr2") textoBase = textos.proposito[dados2.proposito];
+    if(tipo==="h2") textoBase = textos.harmonia[dados2.proposito];
+    if(tipo==="a2") textoBase = textos.anoPessoal[dados2.anoPessoal];
+  }
+  else if (tipo.includes("B")) {
+    nomePessoa = document.getElementById("nomeBebe").value;
+    if(tipo==="mB") textoBase = textos.motivacao[dadosBebe.motivacao];
+    if(tipo==="iB") textoBase = textos.influencia[dadosBebe.influencia];
+    if(tipo==="pB") textoBase = textos.personalidade[dadosBebe.personalidade];
+  }
+
+  abrirModalTexto(formatarTextoPersonalizado(textoBase, nomePessoa));
+}
+
+function abrirModalRegente(texto, idRegente) {
+    let nomeInput = "";
+    if (idRegente === "regente1") nomeInput = document.getElementById("nome1").value;
+    else if (idRegente === "regente2") nomeInput = document.getElementById("nome2").value;
+    else if (idRegente === "regenteBebe") nomeInput = document.getElementById("nomeBebe").value;
+
+    abrirModalTexto(formatarTextoPersonalizado(texto, nomeInput));
+}
+
+function mostrarSequenciaNegativa(idRegente){
+  let dados;
+  let nomeInput = "";
+
+  if (idRegente === "regente1") {
+    dados = dados1;
+    nomeInput = document.getElementById("nome1").value;
+  }
+  else if (idRegente === "regente2") {
+    dados = dados2;
+    nomeInput = document.getElementById("nome2").value;
+  }
+  else if (idRegente === "regenteBebe") {
+    dados = dadosBebe;
+    nomeInput = document.getElementById("nomeBebe").value;
+  }
+
+  if (!dados || !dados.sequenciaNegativa || dados.sequenciaNegativa.length === 0){
+    abrirModalTexto("Nenhuma sequência negativa encontrada.");
+    return;
+  }
+
+  const textoBruto = dados.sequenciaNegativa.map(n => textos.sequenciaNegativa[n]).join("<br><br>");
+  abrirModalTexto(formatarTextoPersonalizado(textoBruto, nomeInput));
+}
+
+function fecharModal(){
+  document.getElementById("modal").style.display="none";
+}
+
+// =====================
+// GERAR
+// =====================
+let dados1, dados2;
+let sexo1Val, sexo2Val, rh1Val, rh2Val;
+
+function gerar(){
+
+  const nome1 = document.getElementById("nome1").value;
+  const nome2 = document.getElementById("nome2").value;
+  const data1 = document.getElementById("data1").value;
+  const data2 = document.getElementById("data2").value;
+
+  sexo1Val = document.getElementById("sexo1").value;
+  sexo2Val = document.getElementById("sexo2").value;
+  rh1Val = document.getElementById("rh1").value;
+  rh2Val = document.getElementById("rh2").value;
+
+  dados1 = calcularPessoa(nome1, data1);
+  dados2 = calcularPessoa(nome2, data2);
+  dados1.anoPessoal = calcularAnoPessoal(data1);
+dados2.anoPessoal = calcularAnoPessoal(data2);
+
+  gerarPiramide(dados1.valores,
+    document.getElementById("piramide1"),
+    document.getElementById("regente1")
+  );
+
+  gerarPiramide(dados2.valores,
+    document.getElementById("piramide2"),
+    document.getElementById("regente2")
+  );
+
+  document.getElementById("compat").innerHTML = compatibilidadeRH();
+}
+
+  
+let dadosBebe = null;
+  
+function gerarBebe(){
+
+  const nomeBebe = document.getElementById("nomeBebe").value;
+
+  if(!nomeBebe) return;
+
+  // calcular apenas pelo nome
+  dadosBebe = calcularPessoa(nomeBebe, null);
+
+  gerarPiramide(
+    dadosBebe.valores,
+    document.getElementById("piramideBebe"),
+    document.getElementById("regenteBebe")
+  );
+}
+
+
+
+function abrirPremiumSinastria(){
+
+  const nome1 = document.getElementById("nome1").value;
+  const nome2 = document.getElementById("nome2").value;
+  const data1 = document.getElementById("data1").value;
+  const data2 = document.getElementById("data2").value;
+
+  if(!dados1 || !dados2){
+    alert("Calcule a sinastria primeiro.");
+    return;
+  }
+const pacote = {
+
+  pessoa1:{
+    nome: nome1,
+    data: data1,
+
+    piramide: document.getElementById("piramide1").innerHTML,
+    regente: dados1.regente,
+   
+
+    motivacao: dados1.motivacao,
+    influencia: dados1.influencia,
+    personalidade: dados1.personalidade,
+    caminho: dados1.caminho,
+    proposito: dados1.proposito,
+    harmonia: dados1.harmonia,
+    ano: dados1.anoPessoal,
+
+    textos:{
+      motivacao: textos.motivacao[dados1.motivacao],
+      influencia: textos.influencia[dados1.influencia],
+      personalidade: textos.personalidade[dados1.personalidade],
+      caminho: textos.CaminhodeVida[dados1.caminho],
+      proposito: textos.proposito[dados1.proposito],
+      harmonia: textos.harmonia[dados1.harmonia],
+      ano: textos.anoPessoal[dados1.anoPessoal],
+      regente: textos.regente[dados1.regente],
+ seqNegativa: dados1.sequenciaNegativa
+  ? dados1.sequenciaNegativa
+      .map(n => textos.sequenciaNegativa[n])
+      .join("<br><br>")
+  : "",
+    }
+  },
+
+  pessoa2:{
+    nome: nome2,
+    data: data2,
+
+    piramide: document.getElementById("piramide2").innerHTML,
+    regente: dados2.regente,
+    
+
+    motivacao: dados2.motivacao,
+    influencia: dados2.influencia,
+    personalidade: dados2.personalidade,
+    caminho: dados2.caminho,
+    proposito: dados2.proposito,
+    harmonia: dados2.harmonia,
+    ano: dados2.anoPessoal,
+
+    textos:{
+      motivacao: textos.motivacao[dados2.motivacao],
+      influencia: textos.influencia[dados2.influencia],
+      personalidade: textos.personalidade[dados2.personalidade],
+      caminho: textos.CaminhodeVida[dados2.caminho],
+      proposito: textos.proposito[dados2.proposito],
+      harmonia: textos.harmonia[dados2.harmonia],
+      ano: textos.anoPessoal[dados2.anoPessoal],
+      regente: textos.regente[dados2.regente],
+      seqNegativa: dados2.sequenciaNegativa
+  ? dados2.sequenciaNegativa
+      .map(n => textos.sequenciaNegativa[n])
+      .join("<br><br>")
+  : "",
+    }
+  },
+
+  sinastria:{
+    numero: chaveSinastria(dados1.proposito, dados2.proposito),
+    texto: textos.sinastria[
+      chaveSinastria(dados1.proposito, dados2.proposito)
+    ]
+  },
+
+  biologico: compatibilidadeRH(),
+
+bebe: dadosBebe ? {
+  nome: document.getElementById("nomeBebe").value,
+
+  motivacao: dadosBebe.motivacao,
+  influencia: dadosBebe.influencia,
+  personalidade: dadosBebe.personalidade,
+  regente: dadosBebe.regente,
+
+  piramide: document.getElementById("piramideBebe").innerHTML,
+
+  textos:{
+    motivacao: textos.motivacao[dadosBebe.motivacao],
+    influencia: textos.influencia[dadosBebe.influencia],
+    personalidade: textos.personalidade[dadosBebe.personalidade],
+    regente: textos.regente[dadosBebe.regente]
+  }
+
+} : null
+
+};
+
+localStorage.setItem(
+  "relatorioSinastria",
+  JSON.stringify(pacote)
+);
+
+
+
+  window.open(
+    "https://hemricciinstintosuperior-rcci.github.io/Harmonia_conjugal/premiumsinastria.html",
+    "_blank"
+  );
+}
+</script>
+  <script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js");
+}
+ // 🔒 BLOQUEIO CÓPIA
+// =======================
+document.oncontextmenu=()=>false;
+document.onselectstart=()=>false; 
+
+</script>
